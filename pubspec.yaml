@@ -1,6 +1,7 @@
 name: yuhsuan_sdk
 description: Yuhsuan sdk
 version: 0.1.0+1
+homepage: https://github.com/nyto9999-flutter/yuhsuan_sdk
 
 
 environment:
@@ -9,10 +10,13 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_riverpod: ^2.1.3
   http: ^0.13.5
   local_auth: ^2.1.3
   local_auth_android: ^1.0.17
   local_auth_ios: ^1.0.12
+  shared_preferences: ^2.0.17
+
 
 dev_dependencies:
   test: ^1.19.2

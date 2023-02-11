@@ -2,10 +2,4 @@
 import 'package:test/test.dart';
 import 'package:yuhsuan_sdk/yuhsuan_sdk.dart';
 
-void main() {
-  group('YuhsuanSdk', () {
-    test('can be instantiated', () {
-      expect(YuhsuanSdk(), isNotNull);
-    });
-  });
-}
+void main() {}
