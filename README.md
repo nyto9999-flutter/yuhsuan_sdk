@@ -1,10 +1,9 @@
 # Yuhsuan Sdk
 
-Yuhsuan sdk
-
 ## Installation 💻
 
-**❗ In order to start using Yuhsuan Sdk you must have the [Dart SDK][dart_install_link] installed on your machine.**
+Look for current version:
+[Pub dev](https://pub.dev/packages/yuhsuan_sdk)
 
 Add `yuhsuan_sdk` to your `pubspec.yaml`:
 

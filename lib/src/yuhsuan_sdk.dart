@@ -12,17 +12,23 @@ class MySdk {
   /// {@macro yuhsuan_sdk}
   MySdk();
 
-  ///[Utils]
   static final BioAuth bioAuth = BioAuth._();
   static final Networking networking = Networking._();
 
-  ///[Provier]
   String capitalize(String s) {
     if (s.isEmpty) return s;
     return s[0].toUpperCase() + s.substring(1);
   }
+
+  ///[TODO]
+  /// 1. compare
+  /// 2. snackMessage
+  ///
 }
 
+/// http package method
+///
+///
 class Networking {
   Networking._();
 
@@ -49,6 +55,9 @@ class Networking {
   }
 }
 
+/// local_auth package method
+///
+///
 class BioAuth {
   BioAuth._();
   static final _auth = LocalAuthentication();
