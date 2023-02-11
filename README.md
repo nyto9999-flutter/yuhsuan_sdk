@@ -20,12 +20,11 @@ dart pub get
 
 ---
 
-## MySdk
+## Usage
 ```
-  network request
-  capitalize
-  bioAuth
-
+  MySdk.network request
+  MySdk.capitalize
+  MySdk.bioAuth
 ```
 
 
