@@ -1,9 +1,13 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:http/http.dart' as http;
 import 'package:http/http.dart';
 import 'package:local_auth/local_auth.dart';
 import 'package:local_auth_android/local_auth_android.dart';
 import 'package:local_auth_ios/local_auth_ios.dart'
     show AuthMessages, AuthenticationOptions, IOSAuthMessages;
+import 'package:yuhsuan_sdk/src/date_util.dart';
+import 'package:yuhsuan_sdk/src/json_util.dart';
+import 'package:yuhsuan_sdk/src/widgets.dart';
 
 /// {@template yuhsuan_sdk}
 /// Yuhsuan sdk
@@ -12,25 +16,34 @@ class MySdk {
   /// {@macro yuhsuan_sdk}
   MySdk();
 
-  static final BioAuth bioAuth = BioAuth._();
-  static final Networking networking = Networking._();
+  static final BioAuth bioAuth = BioAuth();
+  static final Network networking = Network();
+  static final DateUtil dateUtil = DateUtil();
+  static final JsonUtil jsonUtil = JsonUtil();
+  static final Widgets widgets = Widgets();
 
+  /// Capitalize the first letter of the string
+  ///
   String capitalize(String s) {
     if (s.isEmpty) return s;
     return s[0].toUpperCase() + s.substring(1);
   }
 
-  ///[TODO]
-  /// 1. compare
-  /// 2. snackMessage
+  /// extract element from newList which is not in oldList
   ///
+  List<dynamic> extractDiff(
+      {required List<dynamic> oldList, required List<dynamic> newList}) {
+    return newList.where((element) => !oldList.contains(element)).toList();
+  }
 }
 
 /// http package method
 ///
 ///
-class Networking {
-  Networking._();
+class Network {
+  Future<void> fakeRequest(int sec) async {
+    await Future.delayed(Duration(seconds: sec));
+  }
 
   Future<Response> request({
     required String method,
@@ -59,7 +72,6 @@ class Networking {
 ///
 ///
 class BioAuth {
-  BioAuth._();
   static final _auth = LocalAuthentication();
 
   Future<bool> canAuthenticate() async =>
