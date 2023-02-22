@@ -7,7 +7,7 @@ import 'template.dart';
 void main() {
   testWidgets('snack bar test', (tester) async {
     await tester.pumpWidget(MyWidget(
-      body: Widgets().snackMessage('M'),
+      body: ReusableWidgets().snackMessage('M'),
     ));
 
     final snackFinder = find.byWidget(SnackBar(content: Text('M')));

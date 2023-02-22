@@ -1,4 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:http/http.dart';
 import 'package:local_auth/local_auth.dart';
@@ -20,7 +21,7 @@ class MySdk {
   static final Network networking = Network();
   static final DateUtil dateUtil = DateUtil();
   static final JsonUtil jsonUtil = JsonUtil();
-  static final Widgets widgets = Widgets();
+  static final ReusableWidgets widgets = ReusableWidgets();
 
   /// Capitalize the first letter of the string
   ///
@@ -34,6 +35,11 @@ class MySdk {
   List<dynamic> extractDiff(
       {required List<dynamic> oldList, required List<dynamic> newList}) {
     return newList.where((element) => !oldList.contains(element)).toList();
+  }
+
+  //create a async function that sleep by a given sec
+  Future<void> sleep(int sec) async {
+    await Future.delayed(Duration(seconds: sec));
   }
 }
 
@@ -63,12 +69,13 @@ class Network {
         return http.put(uri);
       case 'delete':
         return http.delete(uri);
+      default:
+        throw Exception('Invalid method');
     }
-    throw Exception('Invalid method');
   }
 }
 
-/// local_auth package method
+/// local_auth
 ///
 ///
 class BioAuth {

@@ -27,6 +27,7 @@ dart pub get
     - Network
     - DateUtil
     - BioAuth
+    - Widget
 ```
 
 ## [Plugins](https://gist.github.com/nyto9999/a84240f956f425ada35b0d489e93aa7c)
